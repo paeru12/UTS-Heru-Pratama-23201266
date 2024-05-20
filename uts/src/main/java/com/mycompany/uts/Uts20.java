@@ -23,7 +23,6 @@ public class Uts20 {
 
             System.out.println("Silakan inputkan nama anda: " );
             String nama = scanner.nextLine();
-            char namaP = nama.charAt(0);
             
             System.out.println("Pilih Jenis kelamin:");
             System.out.println("1. Laki-laki");
@@ -44,8 +43,15 @@ public class Uts20 {
             // Input data dari pengguna
             System.out.println("Masukkan angka pertama: ");
             angka1 = scanner.nextInt();
-            System.out.println("Masukkan operator (+, -, *, /): ");
-            operator = scanner.next().charAt(0);
+            while (true) {
+                System.out.println("Masukkan operator (+, -, *, /): ");
+                operator = scanner.next().charAt(0);
+                if (operator == '+' || operator == '-' || operator == '*' || operator == '/') {
+                    break; // Operator valid, keluar dari loop
+                } else {
+                    System.out.println("Operator tidak valid! Masukkan operator yang valid.");
+                }
+            }
             System.out.println("Masukkan angka kedua: ");
             angka2 = scanner.nextInt();
             // Menghitung hasil
